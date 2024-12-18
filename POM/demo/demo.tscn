@@ -1,0 +1,138 @@
+[gd_scene load_steps=18 format=3 uid="uid://jjy3167w8voe"]
+
+[ext_resource type="Texture2D" uid="uid://btb33ccwoo0m" path="res://addons/POM/demo/rock texture/rock2_orm.png" id="2_328uq"]
+[ext_resource type="Shader" uid="uid://cgf5uunv4hy4d" path="res://addons/POM/POM_shader.tres" id="2_s4ge3"]
+[ext_resource type="Script" path="res://addons/POM/POM.gd" id="3_l0hh5"]
+[ext_resource type="Texture2D" uid="uid://dc3qg5gk53x2f" path="res://addons/POM/demo/rock texture/rock2_albedo.png" id="3_pf3fi"]
+[ext_resource type="Texture2D" uid="uid://d3uvk7v1u8udm" path="res://addons/POM/demo/rock texture/rock2_heightmap.png" id="4_s5cy6"]
+[ext_resource type="Texture2D" uid="uid://ucuygfugjwr" path="res://addons/POM/demo/rock texture/rock2_normal.png" id="5_40abu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfei0"]
+render_priority = 0
+shader = ExtResource("2_s4ge3")
+shader_parameter/layer_gap = 0.1
+shader_parameter/UV_scale = Vector2(2, 1)
+shader_parameter/UV_pan = Vector2(0, 0)
+shader_parameter/adjust_alpha = 0.05
+shader_parameter/color = ExtResource("3_pf3fi")
+shader_parameter/depth = ExtResource("4_s5cy6")
+shader_parameter/alpha_or_color_Image_with_alpha = ExtResource("2_328uq")
+shader_parameter/metal_or_orm = ExtResource("2_328uq")
+shader_parameter/rough_or_orm = ExtResource("2_328uq")
+shader_parameter/ao_or_orm = ExtResource("2_328uq")
+shader_parameter/normal = ExtResource("5_40abu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_illt4"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_ucd0e"]
+transform_format = 1
+use_colors = true
+instance_count = 55
+mesh = SubResource("SphereMesh_illt4")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0181732, 0.0181732, 0.0181732, 0.0181732, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0363464, 0.0363464, 0.0363464, 0.0363464, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0545349, 0.0545349, 0.0545349, 0.0545349, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0726929, 0.0726929, 0.0726929, 0.0726929, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0908813, 0.0908813, 0.0908813, 0.0908813, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.10907, 0.10907, 0.10907, 0.10907, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.127197, 0.127197, 0.127197, 0.127197, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.145386, 0.145386, 0.145386, 0.145386, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.163574, 0.163574, 0.163574, 0.163574, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.181763, 0.181763, 0.181763, 0.181763, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.199951, 0.199951, 0.199951, 0.199951, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.21814, 0.21814, 0.21814, 0.21814, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.236328, 0.236328, 0.236328, 0.236328, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.254395, 0.254395, 0.254395, 0.254395, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.272705, 0.272705, 0.272705, 0.272705, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.290771, 0.290771, 0.290771, 0.290771, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.309082, 0.309082, 0.309082, 0.309082, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.327148, 0.327148, 0.327148, 0.327148, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.345215, 0.345215, 0.345215, 0.345215, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.363525, 0.363525, 0.363525, 0.363525, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.381592, 0.381592, 0.381592, 0.381592, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.399902, 0.399902, 0.399902, 0.399902, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.417969, 0.417969, 0.417969, 0.417969, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.436279, 0.436279, 0.436279, 0.436279, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.454346, 0.454346, 0.454346, 0.454346, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.472656, 0.472656, 0.472656, 0.472656, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.490723, 0.490723, 0.490723, 0.490723, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.508789, 0.508789, 0.508789, 0.508789, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.526855, 0.526855, 0.526855, 0.526855, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.54541, 0.54541, 0.54541, 0.54541, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.563477, 0.563477, 0.563477, 0.563477, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.581543, 0.581543, 0.581543, 0.581543, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.599609, 0.599609, 0.599609, 0.599609, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.618164, 0.618164, 0.618164, 0.618164, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.63623, 0.63623, 0.63623, 0.63623, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.654297, 0.654297, 0.654297, 0.654297, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.672363, 0.672363, 0.672363, 0.672363, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.69043, 0.69043, 0.69043, 0.69043, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.708984, 0.708984, 0.708984, 0.708984, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.727051, 0.727051, 0.727051, 0.727051, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.745117, 0.745117, 0.745117, 0.745117, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.763184, 0.763184, 0.763184, 0.763184, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.781738, 0.781738, 0.781738, 0.781738, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.799805, 0.799805, 0.799805, 0.799805, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.817871, 0.817871, 0.817871, 0.817871, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.835938, 0.835938, 0.835938, 0.835938, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.854492, 0.854492, 0.854492, 0.854492, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.872559, 0.872559, 0.872559, 0.872559, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.890625, 0.890625, 0.890625, 0.890625, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.908691, 0.908691, 0.908691, 0.908691, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.927246, 0.927246, 0.927246, 0.927246, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.945313, 0.945313, 0.945313, 0.945313, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.963379, 0.963379, 0.963379, 0.963379, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.981445, 0.981445, 0.981445, 0.981445)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvryp"]
+render_priority = 0
+shader = ExtResource("2_s4ge3")
+shader_parameter/layer_gap = 0.2
+shader_parameter/UV_scale = Vector2(1, 5)
+shader_parameter/UV_pan = Vector2(0, 0)
+shader_parameter/adjust_alpha = 0.05
+shader_parameter/color = ExtResource("3_pf3fi")
+shader_parameter/depth = ExtResource("4_s5cy6")
+shader_parameter/metal_or_orm = ExtResource("2_328uq")
+shader_parameter/rough_or_orm = ExtResource("2_328uq")
+shader_parameter/ao_or_orm = ExtResource("2_328uq")
+shader_parameter/normal = ExtResource("5_40abu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4pddn"]
+size = Vector2(2, 10)
+
+[sub_resource type="MultiMesh" id="MultiMesh_85jb0"]
+transform_format = 1
+use_colors = true
+instance_count = 55
+mesh = SubResource("PlaneMesh_4pddn")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0181732, 0.0181732, 0.0181732, 0.0181732, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0363464, 0.0363464, 0.0363464, 0.0363464, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0545349, 0.0545349, 0.0545349, 0.0545349, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0726929, 0.0726929, 0.0726929, 0.0726929, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0908813, 0.0908813, 0.0908813, 0.0908813, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.10907, 0.10907, 0.10907, 0.10907, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.127197, 0.127197, 0.127197, 0.127197, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.145386, 0.145386, 0.145386, 0.145386, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.163574, 0.163574, 0.163574, 0.163574, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.181763, 0.181763, 0.181763, 0.181763, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.199951, 0.199951, 0.199951, 0.199951, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.21814, 0.21814, 0.21814, 0.21814, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.236328, 0.236328, 0.236328, 0.236328, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.254395, 0.254395, 0.254395, 0.254395, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.272705, 0.272705, 0.272705, 0.272705, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.290771, 0.290771, 0.290771, 0.290771, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.309082, 0.309082, 0.309082, 0.309082, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.327148, 0.327148, 0.327148, 0.327148, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.345215, 0.345215, 0.345215, 0.345215, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.363525, 0.363525, 0.363525, 0.363525, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.381592, 0.381592, 0.381592, 0.381592, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.399902, 0.399902, 0.399902, 0.399902, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.417969, 0.417969, 0.417969, 0.417969, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.436279, 0.436279, 0.436279, 0.436279, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.454346, 0.454346, 0.454346, 0.454346, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.472656, 0.472656, 0.472656, 0.472656, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.490723, 0.490723, 0.490723, 0.490723, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.508789, 0.508789, 0.508789, 0.508789, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.526855, 0.526855, 0.526855, 0.526855, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.54541, 0.54541, 0.54541, 0.54541, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.563477, 0.563477, 0.563477, 0.563477, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.581543, 0.581543, 0.581543, 0.581543, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.599609, 0.599609, 0.599609, 0.599609, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.618164, 0.618164, 0.618164, 0.618164, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.63623, 0.63623, 0.63623, 0.63623, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.654297, 0.654297, 0.654297, 0.654297, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.672363, 0.672363, 0.672363, 0.672363, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.69043, 0.69043, 0.69043, 0.69043, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.708984, 0.708984, 0.708984, 0.708984, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.727051, 0.727051, 0.727051, 0.727051, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.745117, 0.745117, 0.745117, 0.745117, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.763184, 0.763184, 0.763184, 0.763184, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.781738, 0.781738, 0.781738, 0.781738, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.799805, 0.799805, 0.799805, 0.799805, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.817871, 0.817871, 0.817871, 0.817871, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.835938, 0.835938, 0.835938, 0.835938, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.854492, 0.854492, 0.854492, 0.854492, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.872559, 0.872559, 0.872559, 0.872559, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.890625, 0.890625, 0.890625, 0.890625, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.908691, 0.908691, 0.908691, 0.908691, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.927246, 0.927246, 0.927246, 0.927246, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.945313, 0.945313, 0.945313, 0.945313, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.963379, 0.963379, 0.963379, 0.963379, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.981445, 0.981445, 0.981445, 0.981445)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pih6a"]
+albedo_texture = ExtResource("3_pf3fi")
+metallic_texture = ExtResource("2_328uq")
+metallic_texture_channel = 2
+roughness = 0.77
+roughness_texture = ExtResource("2_328uq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_40abu")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_328uq")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4_s5cy6")
+
+[sub_resource type="SphereMesh" id="SphereMesh_m0ka8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpx8t"]
+albedo_texture = ExtResource("3_pf3fi")
+metallic_texture = ExtResource("2_328uq")
+metallic_texture_channel = 2
+roughness = 0.77
+roughness_texture = ExtResource("2_328uq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_40abu")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_328uq")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4_s5cy6")
+uv1_scale = Vector3(1, 5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oylnd"]
+size = Vector2(2, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k2b2s"]
+size = Vector2(10, 10)
+
+[node name="demo" type="Node3D"]
+
+[node name="POM example" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+material_override = SubResource("ShaderMaterial_vfei0")
+multimesh = SubResource("MultiMesh_ucd0e")
+script = ExtResource("3_l0hh5")
+shadows = true
+POM_layers = 55
+layer_gap = 0.1
+mesh = SubResource("SphereMesh_illt4")
+
+[node name="POM example2" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999714, 0.0239087, 0, -0.0239087, 0.999714, 1.1, 0, 0)
+material_override = SubResource("ShaderMaterial_kvryp")
+multimesh = SubResource("MultiMesh_85jb0")
+script = ExtResource("3_l0hh5")
+use_parent_mesh = true
+shadows = true
+POM_layers = 55
+mesh = SubResource("PlaneMesh_4pddn")
+
+[node name="normal height shader" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_pih6a")
+mesh = SubResource("SphereMesh_m0ka8")
+
+[node name="normal height shader2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999714, 0.0239087, 0, -0.0239087, 0.999714, -1.1, 0.001, 0)
+material_override = SubResource("StandardMaterial3D_kpx8t")
+mesh = SubResource("PlaneMesh_oylnd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_k2b2s")

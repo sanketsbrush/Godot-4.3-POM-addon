@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cbnwop4qjfj3y"]
+
+[ext_resource type="Shader" uid="uid://cgf5uunv4hy4d" path="res://addons/POM/POM_shader.tres" id="1_xbrqp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xbrqp")
+shader_parameter/layer_gap = 0.2
+shader_parameter/UV_scale = Vector2(1.5, 1)
+shader_parameter/UV_pan = Vector2(0, 0)
+shader_parameter/adjust_alpha = 0.05

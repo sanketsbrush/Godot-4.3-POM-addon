@@ -1,0 +1,137 @@
+[gd_scene load_steps=16 format=3 uid="uid://jjy3167w8voe"]
+
+[ext_resource type="Texture2D" uid="uid://btb33ccwoo0m" path="res://addons/POM/demo/rock texture/rock2_orm.png" id="2_328uq"]
+[ext_resource type="Shader" uid="uid://cgf5uunv4hy4d" path="res://addons/POM/POM_shader.tres" id="2_s4ge3"]
+[ext_resource type="Script" path="res://addons/POM/POM.gd" id="3_l0hh5"]
+[ext_resource type="Texture2D" uid="uid://dc3qg5gk53x2f" path="res://addons/POM/demo/rock texture/rock2_albedo.png" id="3_pf3fi"]
+[ext_resource type="Texture2D" uid="uid://d3uvk7v1u8udm" path="res://addons/POM/demo/rock texture/rock2_heightmap.png" id="4_s5cy6"]
+[ext_resource type="Texture2D" uid="uid://ucuygfugjwr" path="res://addons/POM/demo/rock texture/rock2_normal.png" id="5_40abu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pih6a"]
+albedo_texture = ExtResource("3_pf3fi")
+metallic_texture = ExtResource("2_328uq")
+metallic_texture_channel = 2
+roughness = 0.77
+roughness_texture = ExtResource("2_328uq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_40abu")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_328uq")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4_s5cy6")
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m0ka8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpx8t"]
+albedo_texture = ExtResource("3_pf3fi")
+metallic_texture = ExtResource("2_328uq")
+metallic_texture_channel = 2
+roughness = 0.77
+roughness_texture = ExtResource("2_328uq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_40abu")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_328uq")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4_s5cy6")
+uv1_scale = Vector3(1, 3, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oylnd"]
+size = Vector2(2.9, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m827e"]
+render_priority = 0
+shader = ExtResource("2_s4ge3")
+shader_parameter/layer_gap = 0.11
+shader_parameter/UV_scale = Vector2(2, 1)
+shader_parameter/UV_pan = Vector2(0, 0)
+shader_parameter/adjust_alpha = 0.11
+shader_parameter/color = ExtResource("3_pf3fi")
+shader_parameter/depth = ExtResource("4_s5cy6")
+shader_parameter/metal_or_orm = ExtResource("2_328uq")
+shader_parameter/rough_or_orm = ExtResource("2_328uq")
+shader_parameter/ao_or_orm = ExtResource("2_328uq")
+shader_parameter/normal = ExtResource("5_40abu")
+
+[sub_resource type="MultiMesh" id="MultiMesh_1xfal"]
+transform_format = 1
+use_colors = true
+instance_count = 25
+mesh = SubResource("SphereMesh_m0ka8")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.04, 0.04, 0.04, 0.04, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0.08, 0.08, 0.08, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.12, 0.12, 0.12, 0.12, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.16, 0.16, 0.16, 0.16, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2, 0.2, 0.2, 0.2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.24, 0.24, 0.24, 0.24, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.28, 0.28, 0.28, 0.28, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.32, 0.32, 0.32, 0.32, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.36, 0.36, 0.36, 0.36, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.4, 0.4, 0.4, 0.4, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.44, 0.44, 0.44, 0.44, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.48, 0.48, 0.48, 0.48, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.52, 0.52, 0.52, 0.52, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.56, 0.56, 0.56, 0.56, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.6, 0.6, 0.6, 0.6, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.64, 0.64, 0.64, 0.64, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.68, 0.68, 0.68, 0.68, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.72, 0.72, 0.72, 0.72, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.76, 0.76, 0.76, 0.76, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.8, 0.8, 0.8, 0.8, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.84, 0.84, 0.84, 0.84, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.88, 0.88, 0.88, 0.88, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.92, 0.92, 0.92, 0.92, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.96, 0.96, 0.96, 0.96)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23qut"]
+render_priority = 0
+shader = ExtResource("2_s4ge3")
+shader_parameter/layer_gap = 0.11
+shader_parameter/UV_scale = Vector2(1, 3)
+shader_parameter/UV_pan = Vector2(0, 0)
+shader_parameter/adjust_alpha = 0.11
+shader_parameter/color = ExtResource("3_pf3fi")
+shader_parameter/depth = ExtResource("4_s5cy6")
+shader_parameter/metal_or_orm = ExtResource("2_328uq")
+shader_parameter/rough_or_orm = ExtResource("2_328uq")
+shader_parameter/ao_or_orm = ExtResource("2_328uq")
+shader_parameter/normal = ExtResource("5_40abu")
+
+[sub_resource type="MultiMesh" id="MultiMesh_3qtb1"]
+transform_format = 1
+use_colors = true
+instance_count = 25
+mesh = SubResource("PlaneMesh_oylnd")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.04, 0.04, 0.04, 0.04, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0.08, 0.08, 0.08, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.12, 0.12, 0.12, 0.12, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.16, 0.16, 0.16, 0.16, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2, 0.2, 0.2, 0.2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.24, 0.24, 0.24, 0.24, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.28, 0.28, 0.28, 0.28, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.32, 0.32, 0.32, 0.32, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.36, 0.36, 0.36, 0.36, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.4, 0.4, 0.4, 0.4, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.44, 0.44, 0.44, 0.44, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.48, 0.48, 0.48, 0.48, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.52, 0.52, 0.52, 0.52, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.56, 0.56, 0.56, 0.56, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.6, 0.6, 0.6, 0.6, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.64, 0.64, 0.64, 0.64, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.68, 0.68, 0.68, 0.68, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.72, 0.72, 0.72, 0.72, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.76, 0.76, 0.76, 0.76, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.8, 0.8, 0.8, 0.8, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.84, 0.84, 0.84, 0.84, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.88, 0.88, 0.88, 0.88, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.92, 0.92, 0.92, 0.92, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.96, 0.96, 0.96, 0.96)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k2b2s"]
+size = Vector2(10, 10)
+
+[node name="demo" type="Node3D"]
+
+[node name="normal height shader" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.146408, 1.29238)
+material_override = SubResource("StandardMaterial3D_pih6a")
+mesh = SubResource("SphereMesh_m0ka8")
+
+[node name="normal height shader2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999714, 0.0239087, 0, -0.0239087, 0.999714, -2.1, 0.001, 0)
+material_override = SubResource("StandardMaterial3D_kpx8t")
+mesh = SubResource("PlaneMesh_oylnd")
+
+[node name="pom demo2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.146408, 1.29238)
+mesh = SubResource("SphereMesh_m0ka8")
+
+[node name="POM2" type="MultiMeshInstance3D" parent="pom demo2"]
+material_override = SubResource("ShaderMaterial_m827e")
+cast_shadow = 0
+multimesh = SubResource("MultiMesh_1xfal")
+script = ExtResource("3_l0hh5")
+POM_layers = 25
+mesh = SubResource("SphereMesh_m0ka8")
+
+[node name="pom demo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999714, 0.0239087, 0, -0.0239087, 0.999714, 2.9, 0.001, 0)
+mesh = SubResource("PlaneMesh_oylnd")
+
+[node name="POM" type="MultiMeshInstance3D" parent="pom demo"]
+material_override = SubResource("ShaderMaterial_23qut")
+cast_shadow = 0
+multimesh = SubResource("MultiMesh_3qtb1")
+script = ExtResource("3_l0hh5")
+POM_layers = 25
+mesh = SubResource("PlaneMesh_oylnd")
+
+[node name="_" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_k2b2s")

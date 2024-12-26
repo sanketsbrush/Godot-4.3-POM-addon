@@ -1,59 +1,61 @@
 @icon ("./icon.svg")
 @tool
+
 class_name POM extends MultiMeshInstance3D
+
 ##Parent needs to be "MeshInstace3D" , otherwise it won't work.
-@export var use_parent_mesh:bool=true
-var current_shadows:bool
+@export var use_parent_mesh:=false
+
 ##Shadows will reduce performance , so use it only when needed the most.
-@export var shadows:bool=false
-var current_POM_layers:int
+@export var shadows:=false
+
 ##This handles instance count of mesh. Keep it on lower count for better performance.
-@export_range(1,100) var POM_layers:int=10
-var current_layer_gap:float
+@export_range(1,100) var POM_layers:=10
+var current_POM_layers:int
+
 ##You can change height with this one.
-@export var layer_gap:float=.11
-var current_adjust_alpha:float
+@export var layer_gap:=.11
+
 ##You can shift height up or down with this one.
-@export_range(-1.0,1.0)var adjust_alpha:float=.11
-var current_mesh:Mesh
+@export_range(-1.0,1.0)var adjust_alpha:=.11
+
 ##Keep it low poly for better performance.
 @export var mesh:Mesh=BoxMesh.new()
+var current_mesh:Mesh
+
 
 func _process(delta) : if Engine.is_editor_hint() :
-	if get_parent()is not MeshInstance3D || get_parent().mesh==null: use_parent_mesh=false
-	if use_parent_mesh && mesh!=get_parent().mesh:
-		mesh=get_parent().mesh
-		transform=Transform3D(Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3.ZERO)
 	
-	if material_override==null:
-		material_override= load("res://addons/POM/POM_material.tres").duplicate()
-	
-	if(
-	current_shadows!=shadows||
-	current_POM_layers!=POM_layers||
-	current_layer_gap!=layer_gap||
-	current_adjust_alpha!=adjust_alpha||
-	current_mesh!=mesh):
-		do_POM()
-		current_shadows=shadows
-		current_POM_layers=POM_layers
-		current_mesh=mesh
-
-func do_POM():
+	cast_shadow=int(shadows)
+	if material_override==null:material_override= load("res://addons/POM/POM_material.tres").duplicate()
 	material_override.set_shader_parameter("layer_gap",layer_gap)
 	material_override.set_shader_parameter("adjust_alpha",adjust_alpha)
 	
-	if mesh==null:mesh=PlaneMesh.new()
+	if mesh==null:
+		mesh=PlaneMesh.new()
 	
-	cast_shadow=0
+	if get_parent() is not MeshInstance3D or get_parent().mesh==null:
+		use_parent_mesh=false
+	
+	if use_parent_mesh :
+		mesh=get_parent().mesh
+		transform=Transform3D(Basis(),Vector3())
+	
+	if current_POM_layers!=POM_layers or current_mesh!=mesh:
+		do_POM()
+		current_POM_layers=POM_layers
+		current_mesh=mesh
+
+
+func do_POM():
+	
 	multimesh=MultiMesh.new()
 	multimesh.transform_format=MultiMesh.TRANSFORM_3D
 	multimesh.use_colors=true
 	multimesh.mesh=mesh
 	multimesh.instance_count=POM_layers
-	cast_shadow=int(shadows)
 	
 	for i in POM_layers:
-		multimesh.set_instance_transform(i,Transform3D(Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3.ZERO))
-		var instance_alpha=(float(i)/float(POM_layers))
-		multimesh.set_instance_color(i,Color(Color(instance_alpha,instance_alpha,instance_alpha),instance_alpha))
+		multimesh.set_instance_transform(i,Transform3D(Basis(),Vector3()))
+		var instance_alpha=float(i)/float(POM_layers)
+		multimesh.set_instance_color( i,Color(instance_alpha,instance_alpha,instance_alpha,instance_alpha))
